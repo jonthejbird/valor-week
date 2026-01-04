@@ -1,0 +1,9 @@
+ValorWeek Rules:
+
+1.) Free users are limited to 5 goals a week.
+2.) Goals must be unique no repeats.
+3.) Can set frequency of goals for a predefined point value.
+4.) Weekly breakdown will have most productive day of the week and what goals have and haven't been fulfilled.
+5.) A leaderboard will be displayed for free and premium members.
+6.) You can have different profiles for different times in your life locked for free users.
+7.) You can use others goals lists and save it for tracking this will alwasy start a new tracking session when activated.

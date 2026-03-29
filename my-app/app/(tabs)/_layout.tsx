@@ -1,33 +1,47 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+/**
+ * app/(tabs)/_layout.tsx
+ *
+ * PURPOSE:
+ * Bottom tab layout for the main app area.
+ *
+ * IMPORTANT:
+ * initialRouteName forces Home to be the default selected tab.
+ */
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from "expo-router";
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
+      initialRouteName="home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarActiveTintColor: "#F97316",
+        tabBarInactiveTintColor: "#6B7280",
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="goals"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Goals",
+        }}
+      />
+      <Tabs.Screen
+        name="progress"
+        options={{
+          title: "Progress",
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
         }}
       />
     </Tabs>

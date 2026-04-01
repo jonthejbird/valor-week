@@ -2,11 +2,11 @@
  * services/auth.ts
  *
  * PURPOSE:
- * Central Firebase Authentication helper functions.
+ * Firebase Authentication helper functions.
  *
- * IMPORTANT:
- * - These functions are imported by sign-in.tsx and sign-up.tsx
- * - If one of these exports is missing, you'll get "is not a function"
+ * RULE:
+ * - This file ONLY talks to Firebase Auth
+ * - No UI logic here
  */
 
 import {
@@ -18,7 +18,7 @@ import {
 import { auth } from "./firebase";
 
 /**
- * Create a new Firebase Auth account with email and password.
+ * Create a new user account
  */
 export async function signUpWithEmail(
   email: string,
@@ -28,7 +28,7 @@ export async function signUpWithEmail(
 }
 
 /**
- * Sign in an existing Firebase Auth user.
+ * Sign in existing user
  */
 export async function signInWithEmail(
   email: string,
@@ -38,7 +38,7 @@ export async function signInWithEmail(
 }
 
 /**
- * Sign out the current user.
+ * Sign out current user
  */
 export async function signOutUser(): Promise<void> {
   return signOut(auth);

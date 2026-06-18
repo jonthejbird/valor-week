@@ -2,13 +2,23 @@
  * app/(tabs)/home.tsx
  *
  * PURPOSE:
- * Skeleton Home screen after sign-in.
+ * Main dashboard screen — the first tab the user sees after signing in.
+ * Currently a placeholder. Will become the weekly overview hub.
  *
- * FUTURE IDEAS:
- * - Weekly summary
- * - Quick actions
- * - Recent goals
- * - Motivational streak info
+ * PLANNED FEATURES:
+ * - Weekly summary card: total points earned, goals completed vs total
+ * - Quick action buttons: "Add Goal", "View Progress"
+ * - Recent goals list (last 3-5 goals from the current week)
+ * - Motivational streak counter (consecutive weeks with goals completed)
+ *
+ * DATA THIS SCREEN WILL NEED:
+ * - Current user's goals for the week → subscribeToWeekGoals() from services/goals.ts
+ * - User profile (plan, streak data) → users/{userId} document from Firestore
+ * - Point totals → computed from goals (sum of pointValue where completed === true)
+ *
+ * DEBUG NOTES:
+ * - When implementing, import auth from services/firebase.ts for the userId
+ * - Use getWeekOf() from services/goals.ts for the current weekOf string
  */
 
 import React from "react";
